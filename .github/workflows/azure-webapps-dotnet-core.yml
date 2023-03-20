@@ -75,5 +75,5 @@ jobs:
         with:
           app-name: 'codeMobstersSaltaGramApi'
           slot-name: 'production'
-          publish-profile: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: .

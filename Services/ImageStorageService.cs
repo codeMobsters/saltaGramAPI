@@ -12,7 +12,7 @@ public class ImageStorageService
     public async Task<string> UploadFile()
     {
         // Retrieve the connection string for use with the application. 
-        string connectionString = Environment.GetEnvironmentVariable("AZURE_STORAGE_CONNECTION_STRING");
+        string connectionString = Environment.GetEnvironmentVariable("CUSTOMCONNSTR_AZURE_STORAGE_CONNECTION_STRING");
         
 
         // Create a BlobServiceClient object 

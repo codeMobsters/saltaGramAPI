@@ -20,18 +20,18 @@ public class ImageStorageService
         var containerClient = blobServiceClient.GetBlobContainerClient("images");
         
 
-        string localPath = "./data/";
+        string localPath = "./Data/";
         string localFilePath = Path.Combine(localPath, "aPicture.gif");
 
         // Upload
         string fileName = "aPicture.gif";
         var blobClient = containerClient.GetBlobClient(fileName);
         
-        var blobHttpHeader = new BlobHttpHeaders();
-
-        blobHttpHeader.ContentType = "image/gif";
-
-        await blobClient.UploadAsync(localFilePath, blobHttpHeader);
+        // var blobHttpHeader = new BlobHttpHeaders();
+        //
+        // blobHttpHeader.ContentType = "image/gif";
+        //
+        // await blobClient.UploadAsync(localFilePath, blobHttpHeader);
         
         return blobClient.Uri.ToString();
     }

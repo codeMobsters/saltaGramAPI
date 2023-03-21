@@ -15,7 +15,7 @@ public class ImageStorageService : IImageStorageService
     public async Task<string> UploadFile()
     {
         // Retrieve the connection string for use with the application. 
-        string connectionString = _configuration.GetConnectionString("CUSTOMCONNSTR_AZURE_STORAGE_CONNECTION_STRING");
+        string connectionString = _configuration.GetConnectionString("AZURE_STORAGE_CONNECTION_STRING");
         
 
         // Create a BlobServiceClient object 

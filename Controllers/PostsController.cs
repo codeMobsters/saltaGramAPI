@@ -8,10 +8,16 @@ namespace SaltGram.API.Controllers;
 [ApiController]
 public class PostsController : ControllerBase
 {
+    private readonly IImageStorageService _imageStorageService;
+
+    public PostsController(IImageStorageService imageStorageService)
+    {
+        _imageStorageService = imageStorageService;
+    }
+
     [HttpGet]
     public async Task<ActionResult<string>> GetPosts()
     {
-        var test = new ImageStorageService();
-        return await test.UploadFile();
+        return await _imageStorageService.UploadFile();
     }
 }

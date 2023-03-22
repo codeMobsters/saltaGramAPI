@@ -7,17 +7,10 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace SaltGram.API.Models;
 
-public class Comment
+public class CommentResponse
 {
-    [Key]
     public int CommentId { get; set; }
-    [Required]
     public string Name { get; set; }
-    [Required]
     public DateTime CreatedAt { get; set; }
-    [Required]
     public string CommentText { get; set; }
-    [Required]
-    [ForeignKey("Post")]
-    public int PostId { get; set; }
 }

@@ -16,8 +16,10 @@ public class PostsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<string>> GetPosts()
+    public async Task<ActionResult<List<TestPicture>>> GetPosts()
     {
-        return await _imageStorageService.UploadFile();
+        var response = new List<TestPicture>();
+        response.Add(new TestPicture() {url = await _imageStorageService.UploadFile()});
+        return response;
     }
 }
